@@ -1,10 +1,6 @@
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 
-const config = {
-
-}
-
 function launchChromeAndRunLighthouse(url, opts, config = null) {
   return chromeLauncher.launch({chromeFlags: opts.chromeFlags}).then(chrome => {
     opts.port = chrome.port;
@@ -18,6 +14,6 @@ const opts = {
 };
 
 // Usage:
-launchChromeAndRunLighthouse('https://example.com', opts, config).then(results => {
+launchChromeAndRunLighthouse('https://izifortune.github.io/lighthouse-custom-gatherer', opts).then(results => {
   console.log(results);
-});
+}).catch(console.log);
