@@ -7,6 +7,7 @@
   </head>
   <body>
     <div id="auth">
+      <h2 id="auth-h2">Not Authenticated</h2>
       <ul id="todos">
       </ul>
     </div>
@@ -57,14 +58,13 @@
       const token = 'iOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImp0aSI6IjkzZDU0MDBiLTQ5MzgtNDNmZS1iMjY4LTY2MDJlNDIxMjFiYiIsImlhdCI6MTU1MjkwNjc0NywiZXhwIjoxNTUyOTEwMzQ3fQ.qEJflkN2ntXrQFalBkkw4duCh55HdNBLGXZOV-dS3KQ';
       const authDiv = document.getElementById('auth');
       const updateContent = () => {
-        const h2 = document.createElement('h2');
+        const h2 = document.getElementById('auth-h2');
         if (window.localStorage.getItem('token') && window.localStorage.getItem('token') === token) {
           h2.textContent = 'Authenticated';
           getDataFromServer();
         } else {
           h2.textContent = 'Not Authenticated'
         }
-        authDiv.prepend(h2);
       }
       updateContent();
       window.addEventListener('storage', function(event){
