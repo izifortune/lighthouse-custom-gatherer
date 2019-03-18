@@ -5,11 +5,11 @@ const { Gatherer } = require('lighthouse');
 
 function performance() {
   return new Promise((res) => {
-    const logger = (list) => {
+    let logger = (list) => {
       const entries = list.getEntries();
       res(entries[0].duration);
     }
-    const observer = new PerformanceObserver(logger);
+    let observer = new PerformanceObserver(logger);
     observer.observe({ entryTypes: ['measure'] });
   });
 }

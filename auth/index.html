@@ -33,7 +33,7 @@
         const measure = performance.getEntriesByName('Render todos')[0];
       }
 
-      const logger = (list, observer) => {
+      const loggerAuth = (list, observer) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
           console.log('Name: ' + entry.name +
@@ -48,7 +48,7 @@
       };
 
 
-      const observer = new PerformanceObserver(logger);
+      const observerAuth = new PerformanceObserver(loggerAuth);
 
       observer.observe(config);
 
