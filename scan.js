@@ -7,7 +7,7 @@ const pWriteFile = promisify(writeFile);
 const config = {
   extends: 'lighthouse:default',
   passes: [{
-    passName: 'Todos Performance',
+    passName: 'defaultPass', //Needed to run custom Gatherers/Audits in the same pass
     gatherers: [
       `todos-gatherer`,
     ],
